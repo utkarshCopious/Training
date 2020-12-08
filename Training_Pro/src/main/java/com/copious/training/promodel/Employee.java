@@ -11,12 +11,10 @@ public class Employee {
     private String description;
 
     /**
-     *
      * Private constructor for Singleton Implementation
      */
 
     //private Employee() {}
-
     public Employee(String id, String name, String description) {
         this.id = id;
         this.name = name;
@@ -24,7 +22,6 @@ public class Employee {
     }
 
     /**
-     *
      * Thread safe with Double checked locking  - Singleton Implementation
      */
 //    public static Employee getInstance(){
@@ -37,11 +34,10 @@ public class Employee {
 //        }
 //        return obj;
 //    }
-
-
     public String getId() {
         return id;
     }
+
     public void setId(String id) {
         this.id = id;
     }

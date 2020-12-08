@@ -5,6 +5,7 @@ import com.training.exceptions.exceptions.CommonException;
 import com.training.exceptions.exceptions.EmployeeNotFoundException;
 import com.training.exceptions.exceptions.NothingToAddException;
 import com.training.exceptions.exceptions.ProcessRuntimeErrorException;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
 
 @org.springframework.stereotype.Service
 public class Service {
- //Data Set
+    //Data Set
     private final List<Employee> employeeList = new ArrayList<>(Arrays.asList(
 
             new Employee("12", "Jhon", "Manager"),
@@ -38,12 +39,11 @@ public class Service {
         return employeeList.stream().filter(topic -> topic.getId().equals(id)).findFirst().get();
     }
 
-    public List<Employee> sortEmployee()
-    {
+    public List<Employee> sortEmployee() {
         try {
             employeeList.sort((e1, e2) -> e2.compareTo(e1));
 
-        } catch ( IndexOutOfBoundsException | ProcessRuntimeErrorException e ) {
+        } catch (IndexOutOfBoundsException | ProcessRuntimeErrorException e) {
             e.printStackTrace();
             throw new ProcessRuntimeErrorException();
         }
@@ -62,8 +62,7 @@ public class Service {
     }
 
 
-    public void updateEmployee(Employee employe, String id)
-    {
+    public void updateEmployee(Employee employe, String id) {
         int counter = 0;
         try {
             for (Employee employee1 : employeeList) {
